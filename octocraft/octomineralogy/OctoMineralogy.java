@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import octogeek.octocraft.octocore.PatchHandler;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -29,6 +30,7 @@ import octogeek.octocraft.octomineralogy.tabs.TabConstruction;
 import octogeek.octocraft.octomineralogy.tabs.TabOreParts;
 import octogeek.octocraft.octomineralogy.tabs.TabOres;
 import octogeek.octocraft.octomineralogy.tabs.TabRocks;
+import octogeek.octocraft.octomineralogy.worldgen.StoneReplacer;
 
 
 public class OctoMineralogy {
@@ -54,6 +56,14 @@ public class OctoMineralogy {
 	private List<String> metamorphicWhitelist = new ArrayList<String>();
 	private List<String> metamorphicBlacklist  = new ArrayList<String>();
 
+    public static double ROCK_LAYER_NOISE = 32; 
+    /** size of mineral biomes */
+    public static int GEOME_SIZE = 100; 
+    /** thickness of rock layers */
+    public static int GEOM_LAYER_THICKNESS = 8;
+	public static boolean PATCH_UPDATE = true;
+	
+	
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event, Configuration config) {
 		System.out.println("OctoMineralogy:preInit");
@@ -66,6 +76,11 @@ public class OctoMineralogy {
 	
     @EventHandler
     public static void init(FMLInitializationEvent event) {	
+		PatchHandler.getInstance().init(PATCH_UPDATE);
+    	GameRegistry.registerWorldGenerator(new StoneReplacer(), 10);
+
+    	
+    	
     	if(event.getSide().isClient()){
     		Register.registerItemRenders(mineralogyItemRegistry);
     	}

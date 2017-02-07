@@ -12,6 +12,7 @@ import octogeek.octocraft.octocore.register.SoundRegister;
 import octogeek.octocraft.octofurniture.OctoFurniture;
 import octogeek.octocraft.octoindustry.OctoIndustry;
 import octogeek.octocraft.octomineralogy.OctoMineralogy;
+import octogeek.octocraft.octovegetal.OctoVegetal;
 
 
 public class ClientProxy implements CommonProxy{
@@ -22,12 +23,14 @@ public class ClientProxy implements CommonProxy{
 		OctoMineralogy.preInit(event,conf);
 		OctoIndustry.preInit();
 		OctoFurniture.preInit(event, conf);
+		OctoVegetal.preInit(event, conf);
 	}
 	@Override
 	public void init(FMLInitializationEvent event) {
 		OctoMineralogy.init(event);
 		OctoIndustry.init(event);
 		OctoFurniture.init(event);
+		OctoVegetal.init(event);
 //		ModCrafting.register();
 
 	}

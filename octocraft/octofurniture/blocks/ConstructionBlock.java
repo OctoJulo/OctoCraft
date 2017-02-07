@@ -11,7 +11,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import octogeek.octocraft.octocore.register.Register;
 import octogeek.octocraft.octofurniture.OctoFurniture;
-import octogeek.octocraft.octofurniture.OctoFurniture.ConstructionType;
+import octogeek.octocraft.octofurniture.OctoFurniture.ConstructionStyle;
+import octogeek.octocraft.octofurniture.OctoFurniture.UtilityType;
 
 public class ConstructionBlock extends Block {
     public static final List<Block> constructionLabo = new ArrayList<Block>();		 // Block sedimentaire
@@ -26,31 +27,43 @@ public class ConstructionBlock extends Block {
 		this.name = name;
 	}
 	public static void init() {
-		System.out.println("Octo registerBlock Cnnstruction");
-		addConstructionBlock (ConstructionType.ANY,"wall",1.5,10,0);
-		addConstructionBlock (ConstructionType.LABORATORY,"wallgate",1.5,10,0);
-		addConstructionBlock (ConstructionType.LABORATORY,"wallvent",1.5,10,0);
-		addConstructionBlock (ConstructionType.ANY,"wallbop",1.5,10,0);
-		addConstructionBlock (ConstructionType.ANY,"walltop",1.5,10,0);
-		addConstructionBlock (ConstructionType.LABORATORY,"wallsignleft",1.5,10,0);		
-		addConstructionBlock (ConstructionType.LABORATORY,"wallsignright",1.5,10,0);			
-		addConstructionBlock (ConstructionType.LABORATORY,"wallsigntop",1.5,10,0);			
-		addConstructionBlock (ConstructionType.LABORATORY,"wallsignbot",1.5,10,0);			
-		addConstructionBlock (ConstructionType.LABORATORY,"wallsignstop",1.5,10,0);			
+		System.out.println("Octo registerBlock Construction");
 		
-		addConstructionBlock (ConstructionType.LABORATORY,"conduite",1.5,10,0);
-		addConstructionBlock (ConstructionType.LABORATORY,"corner",1.5,10,0);		
+		
+//		public enum ConstructionType {
+//			LABORATORY, WAREHOUSE, INDUSTRIAL, RUSTY,HOME,ANY
+//			}
+//		public enum UtilityType {
+//			GROUND,WALL,ROOF,TECHNICAL,OTHER
+//			
+//		}	
+		//ground
+		addConstructionBlock (ConstructionStyle.ANY,UtilityType.GROUND,"ground",1.5,10,0);
+		
+		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"wall",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallgate",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallvent",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"wallbop",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"walltop",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignleft",1.5,10,0);		
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignright",1.5,10,0);			
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsigntop",1.5,10,0);			
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignbot",1.5,10,0);			
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignstop",1.5,10,0);			
+		
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.OTHER,"conduite",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.OTHER,"corner",1.5,10,0);		
 				
 		
 	}
-	private static void addConstructionBlock(ConstructionType type, String name,double hardness,double blastResistance,int toolHardnessLevel){
+	private static void addConstructionBlock(ConstructionStyle style, UtilityType Utype, String name,double hardness,double blastResistance,int toolHardnessLevel){
 		final Block constructionlab,constructionhome,constructionrusty,constructionwarehouse,constructionindus, rockStairs, rockSlab;
 		
 		//construction = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"labo_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
 		//rockStairs = Register.registerBlock(new RockStairs(rock, (float)hardness, (float)blastResistance, toolHardnessLevel, SoundType.STONE,OctoMineralogy.CREATIVE_TABCONSTRUCTION),name+"_rockstairs",OctoMineralogy.mineralogyBlockRegistry,OctoMineralogy.mineralogyItemRegistry);
 		//rockSlab = Register.registerBlock(new RockSlab((float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.STONE,OctoMineralogy.CREATIVE_TABCONSTRUCTION),name+"_rockslab",OctoMineralogy.mineralogyBlockRegistry,OctoMineralogy.mineralogyItemRegistry);
 		
-		switch(type){
+		switch(style){
 //		case IGNEOUS:
 //			igneousStones.add(rock);
 //			break;

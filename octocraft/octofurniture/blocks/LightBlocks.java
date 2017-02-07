@@ -34,9 +34,9 @@ public class LightBlocks extends Block{
 	public static void init() {
 		addLight("Block_LavaLamp", 0.8F, 1.0F);
 		addLight("Block_GlowLight",0.5F, 1.0F);
-		
-		
-		
+		addLight("Block_SteampunkLamp",0.5F, 1.0F);
+		addLight("Block_LaboLamp",0.5F, 1.0F);
+		addLight("Block_IndustryLight",0.5F, 1.0F);
 
 	}
 	@Override

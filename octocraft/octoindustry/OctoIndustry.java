@@ -46,6 +46,7 @@ public class OctoIndustry {
 		Pickaxe_Tools.init();
 		Tools.init();
 	}	
+	
     @EventHandler
     public static void init(FMLInitializationEvent event) {	
 		GameRegistry.registerTileEntity(TileEntityToolBox.class, "ToolBox");
@@ -54,22 +55,9 @@ public class OctoIndustry {
     		Register.registerItemRenders(IndustryItemRegistry);
     	}
     }
+    
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {	
     }
-//    private static void registerItemRenders(){
-//		System.out.println("Octo itemRender technology:");
-//		for(String name : IndustryItemRegistry.keySet()){
-//			System.out.println(name);
-//			Item i = OctoIndustry.IndustryItemRegistry.get(name);
-//    		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(i, 0, new ModelResourceLocation(OctoReference.MOD_ID+":"+name, "inventory"));
-//    	}
-//    }
-//	public static Item registerItem(Item i, String name) {
-//		GameRegistry.register(i.setRegistryName(OctoReference.MOD_ID,name));
-//		IndustryItemRegistry.put(name,i);
-//		i.setUnlocalizedName(OctoReference.MOD_ID+"."+name);
-//		//if(!(i instanceof ItemBlock))FMLLog.info("%s: added %s=%s",MODID,i.getUnlocalizedName(),formatName(name));
-//		return i;
-//	}  
+
 }

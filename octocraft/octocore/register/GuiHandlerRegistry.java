@@ -17,11 +17,6 @@ public class GuiHandlerRegistry implements IGuiHandler {
 		registeredHandlers.put(guiID, handler);
 	}
 
-	
-
-
-
-	// Gets the server side element for the given gui id- this should return a container
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		IGuiHandler handler = registeredHandlers.get(ID);
@@ -32,7 +27,6 @@ public class GuiHandlerRegistry implements IGuiHandler {
 		}
 	}
 
-	// Gets the client side element for the given gui id- this should return a gui
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		IGuiHandler handler = registeredHandlers.get(ID);

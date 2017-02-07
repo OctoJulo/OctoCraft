@@ -43,9 +43,13 @@ import octogeek.octocraft.octomineralogy.items.Dust;
 import octogeek.octocraft.octomineralogy.tabs.TabRocks;
 
 public class OctoFurniture {
-	public enum ConstructionType {
+	public enum ConstructionStyle {
 		LABORATORY, WAREHOUSE, INDUSTRIAL, RUSTY,HOME,ANY
 		}
+	public enum UtilityType {
+		GROUND,WALL,ROOF,TECHNICAL,OTHER
+		
+	}
 	public static Block CantinaBox;
 	public static Block VerticalTeleporter;
 	public static Block BlockToolChest;

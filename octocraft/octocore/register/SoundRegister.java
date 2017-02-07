@@ -9,7 +9,6 @@ public class SoundRegister {
 	public static SoundEvent registerSound(String soundName) {
 		ResourceLocation loc = new ResourceLocation(OctoReference.MOD_ID ,soundName);
 		SoundEvent e = new SoundEvent(loc);
-		return GameRegistry.register(e, loc);
-		
+		return GameRegistry.register(e, loc);	
 	}
 }
