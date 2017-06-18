@@ -20,15 +20,11 @@ public class LightBlocks extends Block{
 
 	public LightBlocks(float hardness,float LightLevel) {
 		super(Material.REDSTONE_LIGHT);
-		//setUnlocalizedName(ModBlocks.ListeBlocks.LAVALAMP.getUnlocalizedName());
-		//setRegistryName(ModBlocks.ListeBlocks.LAVALAMP.getRegistryName());
 		setCreativeTab(OctoFurniture.CREATIVE_TABFURNITURES);
 		setLightLevel(LightLevel);
 		setHardness(hardness);
 		setSoundType(SoundType.METAL);
 		setLightOpacity(1);
-		
-		//new AxisAlignedBB(sizeXmin/16.0F, sizeXmax/16.0F, sizeYmin/16.0F, sizeYmax/16.0F, sizeZmin/16.0F, sizeZmax/16.0F);
 	}
 
 	public static void init() {
@@ -47,20 +43,9 @@ public class LightBlocks extends Block{
 	public boolean isFullCube(IBlockState state) {
 		return false;
 	}
-//	@Override // the block is smaller than a full cube, specify dimensions here
-//	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-//		
-//		return new AxisAlignedBB(1/16.0F, 0, 1/16.0F, 15/16.0F, 8/16.0F, 15/16.0F);
-//	}
-//	
+
 	private static void addLight(String name,float hardness,float LightLevel){
 		final Block light;
-//		final Block brick, brickStairs, brickSlab;
-//		final Block smooth, smoothStairs, smoothSlab;
-//		final Block smoothBrick, smoothBrickStairs, smoothBrickSlab;
 		light = Register.registerBlock(new LightBlocks(hardness, LightLevel),name, OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
 	}
-	
-	
-	
 }

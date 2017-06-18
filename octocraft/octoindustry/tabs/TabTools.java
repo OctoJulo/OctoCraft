@@ -4,12 +4,14 @@ package octogeek.octocraft.octoindustry.tabs;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import octogeek.octocraft.octocore.OctoReference;
 import octogeek.octocraft.octoindustry.items.tools.Tools;
 
 
 public class TabTools extends CreativeTabs {
 	public TabTools() {
 		super("tabtools");
+		this.setBackgroundImageName(OctoReference.MOD_ID+"_tools.png");
 	}
 
 	@Override

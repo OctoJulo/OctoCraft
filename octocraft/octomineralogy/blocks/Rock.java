@@ -29,6 +29,11 @@ public class Rock extends Block {
     public static final List<Block> metamorphicStones = new ArrayList<Block>(); // Block metamorphique
     public static final List<Block> igneousExtrusiveStones = new ArrayList<Block>(); // Block volcanique
     public static final List<Block> igneousIntrusiveStones = new ArrayList<Block>(); // Block volcanique
+    public static final List<Block> sedimentaryAggregates = new ArrayList<Block>();		 // Block sedimentaire
+    public static final List<Block> metamorphicAggregates = new ArrayList<Block>(); // Block metamorphique
+    public static final List<Block> igneousExtrusiveAggregates = new ArrayList<Block>(); // Block volcanique
+    public static final List<Block> igneousIntrusiveAggregates = new ArrayList<Block>(); // Block volcanique
+
 	private String rockname;
 	public Rock(String name,boolean isStoneEquivalent,float hardness,float blastResistance,int toolHardnessLevel,SoundType sound,CreativeTabs tab) {
 		super(Material.ROCK);
@@ -41,13 +46,7 @@ public class Rock extends Block {
 		this.rockname = name;
 	}
 
-//	private String rockname(String name) {
-//		return name; 
-//		
-//	}
-
 	public final boolean isStoneEquivalent;
-	
 	@Override 
 	public boolean isReplaceableOreGen(IBlockState state, IBlockAccess world, BlockPos pos, com.google.common.base.Predicate<IBlockState> target) { 
 		return isStoneEquivalent; 
@@ -123,31 +122,40 @@ public class Rock extends Block {
 //				break;
 			case IGNEOUSEXTRUSIVE:
 				igneousExtrusiveStones.add(rock);
-				
+			    igneousExtrusiveAggregates.add(aggregate);
 				break;
+				
 			case IGNEOUSINTRUSIVE:
 				igneousIntrusiveStones.add(rock);
+			    igneousIntrusiveAggregates.add(aggregate);
 				
 				break;
+				
 			case METAMORPHIC:
 				metamorphicStones.add(rock);
-				
+			    metamorphicAggregates.add(aggregate);
 				break;
+				
 			case SEDIMENTARY:
 				sedimentaryStones.add(rock);
-				
+			    sedimentaryAggregates.add(aggregate);
 				break;
+				
 			case ANY:
 				sedimentaryStones.add(rock);
 				metamorphicStones.add(rock);
 				igneousExtrusiveStones.add(rock);
 				igneousIntrusiveStones.add(rock);
 				
-				//igneousStones.add(rock);
+			    sedimentaryAggregates.add(aggregate);
+			    metamorphicAggregates.add(aggregate);
+			    igneousExtrusiveAggregates.add(aggregate);
+			    igneousIntrusiveAggregates.add(aggregate);
+
 				break;
 		}
 		OreDictionary.registerOre("stone",rock);
-		
+		OreDictionary.registerOre("gravel",aggregate);
 		//GameRegistry.addSmelting(rock, new ItemStack(Blocks.STONE),0.1F);
 	}
 }

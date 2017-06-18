@@ -39,21 +39,18 @@ public class ConstructionBlock extends Block {
 //		}	
 		//ground
 		addConstructionBlock (ConstructionStyle.ANY,UtilityType.GROUND,"ground",1.5,10,0);
-		
 		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"wall",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"wallbop",1.5,10,0);
+		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"walltop",1.5,10,0);		
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallgate",1.5,10,0);
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallvent",1.5,10,0);
-		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"wallbop",1.5,10,0);
-		addConstructionBlock (ConstructionStyle.ANY,UtilityType.WALL,"walltop",1.5,10,0);
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignleft",1.5,10,0);		
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignright",1.5,10,0);			
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsigntop",1.5,10,0);			
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignbot",1.5,10,0);			
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.WALL,"wallsignstop",1.5,10,0);			
-		
 		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.OTHER,"conduite",1.5,10,0);
-		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.OTHER,"corner",1.5,10,0);		
-				
+		addConstructionBlock (ConstructionStyle.LABORATORY,UtilityType.OTHER,"corner",1.5,10,0);			
 		
 	}
 	private static void addConstructionBlock(ConstructionStyle style, UtilityType Utype, String name,double hardness,double blastResistance,int toolHardnessLevel){
@@ -64,46 +61,30 @@ public class ConstructionBlock extends Block {
 		//rockSlab = Register.registerBlock(new RockSlab((float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.STONE,OctoMineralogy.CREATIVE_TABCONSTRUCTION),name+"_rockslab",OctoMineralogy.mineralogyBlockRegistry,OctoMineralogy.mineralogyItemRegistry);
 		
 		switch(style){
-//		case IGNEOUS:
-//			igneousStones.add(rock);
-//			break;
 		case LABORATORY:
 			constructionlab = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"labo_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
-			
 			break;
+			
 		case INDUSTRIAL:
-			//igneousIntrusiveStones.add(rock);
 			constructionindus = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"indus_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
-			
 			break;
+			
 		case WAREHOUSE:
-		//	metamorphicStones.add(rock);
 			
 			break;
 		case HOME:
-	//		metamorphicStones.add(rock);
 			constructionhome = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"home_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
-			
 			break;
+			
 		case RUSTY:
 			constructionrusty = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"rusty_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
-			
 			break;
 
 		case ANY:
 			constructionlab = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"labo_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
 			constructionhome = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"home_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
 			constructionindus = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"indus_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
-			
 			constructionrusty = Register.registerBlock(new ConstructionBlock(name, (float)hardness,(float)blastResistance,toolHardnessLevel, SoundType.ANVIL,OctoFurniture.CREATIVE_TABCONSTRUCTION),"rusty_"+name,OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
-						
-			
-		//	sedimentaryStones.add(rock);
-		//	metamorphicStones.add(rock);
-		//	igneousExtrusiveStones.add(rock);
-		//	igneousIntrusiveStones.add(rock);
-			
-			//igneousStones.add(rock);
 			break;
 	}	
 		

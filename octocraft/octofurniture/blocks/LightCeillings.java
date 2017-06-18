@@ -14,15 +14,12 @@ public class LightCeillings extends Block{
 
 	public LightCeillings(float hardness,float LightLevel) {
 		super(Material.REDSTONE_LIGHT);
-		//setUnlocalizedName(ModBlocks.ListeBlocks.LAVALAMP.getUnlocalizedName());
-		//setRegistryName(ModBlocks.ListeBlocks.LAVALAMP.getRegistryName());
+
 		setCreativeTab(OctoFurniture.CREATIVE_TABFURNITURES);
 		setLightLevel(LightLevel);
 		setHardness(hardness);
 		setSoundType(SoundType.METAL);
 		setLightOpacity(1);
-		
-		//this.AxisAlignedBB = new AxisAlignedBB(sizeXmin/16.0F, sizeXmax/16.0F, sizeYmin/16.0F, sizeYmax/16.0F, sizeZmin/16.0F, sizeZmax/16.0F);
 	}
 
 	public static void init() {
@@ -38,14 +35,12 @@ public class LightCeillings extends Block{
 		return false;
 	}
 	@Override // the block is smaller than a full cube, specify dimensions here
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {		
 		return new AxisAlignedBB(1/16.0F, 12/16.0F, 1/16.0F, 15/16.0F, 16/16.0F, 15/16.0F);
 	}
 	
 	private static void addLight(String name,float hardness,float LightLevel,int sizeXmin,int sizeXmax,int sizeYmin,int sizeYmax,int sizeZmin,int sizeZmax){
 		final Block lightceiling;
-
 		lightceiling = Register.registerBlock(new LightCeillings(hardness, LightLevel),name, OctoFurniture.FurnitureBlockRegistry,OctoFurniture.FurnitureItemRegistry);
 	}
 	

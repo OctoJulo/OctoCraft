@@ -5,9 +5,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import octogeek.octocraft.octomineralogy.OctoMineralogy;
 
-public class TabConstruction extends CreativeTabs {
+public class TabMConstruction extends CreativeTabs {
 	
-	public TabConstruction() {
+	public TabMConstruction() {
 		super("tabconstruction");
 	}
 

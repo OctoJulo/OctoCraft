@@ -101,8 +101,9 @@ public class Geology {
 				for(; y > 0; y--){
 					BlockPos coord = new BlockPos(x, y, z);
 					int i = indexBase + y;
+					int geome = gbase+y;
+					System.out.println("GEOME:"+geome);
 					if(chunk.getBlockState(coord).getBlock() == Blocks.STONE){
-						int geome = gbase+y;
 						if(geome < -32){
 							// RockType.IGNEOUS;
 							chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Rock.igneousIntrusiveStones).getDefaultState());
@@ -117,6 +118,29 @@ public class Geology {
 							chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Rock.sedimentaryStones).getDefaultState());
 						}
 					}
+					else if(chunk.getBlockState(coord).getBlock() == Blocks.GRAVEL){
+//						if(geome < -32){
+//							// RockType.IGNEOUS;
+//							chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Aggregate.igneousIntrusiveAggregates).getDefaultState());
+//						} else if(geome < 0){
+//							// RockType.IGNEOUS;
+//							chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Aggregate.igneousExtrusiveAggregates).getDefaultState());
+//						} else if(geome < 32){
+//							// RockType.METAMORPHIC;
+//							chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Aggregate.metamorphicAggregates).getDefaultState());
+//						} else {
+//							// RockType.SEDIMENTARY;
+//							chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Rock.sedimentaryStones).getDefaultState());
+//						}
+//						chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Aggregate.sedimentaryAggregates).getDefaultState());
+						
+					}
+					else if(chunk.getBlockState(coord).getBlock() == Blocks.SAND){
+						//System.out.println("SAND GENERATOR !!!!");
+						chunk.setBlockState(coord, pickBlockFromList(baseRockVal+y,octogeek.octocraft.octomineralogy.blocks.Sand.aggregateSands).getDefaultState());
+						
+					}
+
 				}
 			}
 		}

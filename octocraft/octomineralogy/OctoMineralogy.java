@@ -24,9 +24,10 @@ import octogeek.octocraft.octocore.register.Register;
 import octogeek.octocraft.octomineralogy.blocks.Aggregate;
 import octogeek.octocraft.octomineralogy.blocks.Ore;
 import octogeek.octocraft.octomineralogy.blocks.Rock;
+import octogeek.octocraft.octomineralogy.blocks.Sand;
 import octogeek.octocraft.octomineralogy.items.CrushedRock;
 import octogeek.octocraft.octomineralogy.items.Dust;
-import octogeek.octocraft.octomineralogy.tabs.TabConstruction;
+import octogeek.octocraft.octomineralogy.tabs.TabMConstruction;
 import octogeek.octocraft.octomineralogy.tabs.TabOreParts;
 import octogeek.octocraft.octomineralogy.tabs.TabOres;
 import octogeek.octocraft.octomineralogy.tabs.TabRocks;
@@ -38,6 +39,10 @@ public class OctoMineralogy {
 	public enum RockType {
 		SEDIMENTARY, METAMORPHIC, IGNEOUSINTRUSIVE, IGNEOUSEXTRUSIVE,ANY
 		}
+	public enum SandType {
+		DESERT, OCEAN, AGGREGATE, ANY
+		}
+	
 	public static boolean DROP_COBBLESTONE = false;
 //
 //	public static boolean SMELTABLE_GRAVEL = true;
@@ -47,7 +52,7 @@ public class OctoMineralogy {
 	public static final CreativeTabs CREATIVE_TABROCKS = new TabRocks();
 	public static final CreativeTabs CREATIVE_TABORES = new TabOres();
 	public static final CreativeTabs CREATIVE_TABOREPARTS = new TabOreParts();
-	public static final CreativeTabs CREATIVE_TABCONSTRUCTION = new TabConstruction();
+	public static final CreativeTabs CREATIVE_TABCONSTRUCTION = new TabMConstruction();
 
 	private List<String> igneousWhitelist = new ArrayList<String>();
 	private List<String> igneousBlacklist = new ArrayList<String>();
@@ -68,6 +73,7 @@ public class OctoMineralogy {
 	public static void preInit(FMLPreInitializationEvent event, Configuration config) {
 		System.out.println("OctoMineralogy:preInit");
 		Rock.init();
+		Sand.init();
 		//Aggregate.init();
 		Ore.init(config);
 		Dust.init();

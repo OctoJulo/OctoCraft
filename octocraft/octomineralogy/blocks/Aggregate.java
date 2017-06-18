@@ -18,10 +18,12 @@ import octogeek.octocraft.octomineralogy.OctoMineralogy;
 import octogeek.octocraft.octomineralogy.OctoMineralogy.RockType;
 
 public class Aggregate extends BlockFalling {
+
 	private final Item dropItem;
 	private final int dropAdduct;
 	private final int dropRange;
 	private String rockSubType;
+
 	public Aggregate(String rockSubtype,Item AggregateDrop, int minNumberDropped, int maxNumberDropped) {
 		super(Material.SAND);
 		//this.setUnlocalizedName(OctoReference.MOD_ID +"_"+ name);
@@ -35,6 +37,18 @@ public class Aggregate extends BlockFalling {
 		dropAdduct = minNumberDropped;
 		dropRange = (maxNumberDropped - minNumberDropped) + 1;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Override 
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         

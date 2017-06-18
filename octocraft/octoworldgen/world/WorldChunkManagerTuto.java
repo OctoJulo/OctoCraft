@@ -22,15 +22,15 @@ public class WorldChunkManagerTuto {//extends WorldChunkManager {
 	
 	public WorldChunkManagerTuto()	{
 
-		this.myBiomeCache = new BiomeCache(this);
+	//	this.myBiomeCache = new BiomeCache(this);
 		this.myBiomesToSpawnIn = new ArrayList<BiomeCache>();
-		this.myBiomesToSpawnIn.add(votreBiome);	
+	//	this.myBiomesToSpawnIn.add(votreBiome);	
 
 	}
 	
 	public WorldChunkManagerTuto(World world) {
 
-		this(world.getSeed(), world.provider.terrainType);
+	//	this(world.getSeed(), world.provider.terrainType);
 
 	}
 	
@@ -40,21 +40,21 @@ public class WorldChunkManagerTuto {//extends WorldChunkManager {
 
 	}
 	
-	public BiomeCache getBiomeGenAt(int x, int z, Biome biomecache)	{
-
-		BiomeCache biome = this.myBiomeCache.getBiome(x, z, biomecache);// getBiomeGenAt(x, z);
-
-		if(biome == null)
-
-		{
-
-			return /*VotreBiome*/;
- 
-		}
-
-		return biome;
-
-	}
+//	public BiomeCache getBiomeGenAt(int x, int z, Biome biomecache)	{
+//
+//		BiomeCache biome = this.myBiomeCache.getBiome(x, z, biomecache);// getBiomeGenAt(x, z);
+//
+//		if(biome == null)
+//
+//		{
+//
+//			return /*VotreBiome*/;
+// 
+//		}
+//
+//		return biome;
+//
+//	}
 	
     public float[] getRainfall(float[] par1ArrayOfFloat, int par2, int par3, int par4, int par5) {
 
@@ -104,9 +104,9 @@ public class WorldChunkManagerTuto {//extends WorldChunkManager {
 
 		if(cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (y & 15) == 0)	{
 
-			BiomeCache[] abiomegenbase1 = this.myBiomeCache.getCachedBiomes(x, y);
+		//	BiomeCache[] abiomegenbase1 = this.myBiomeCache.getCachedBiomes(x, y);
 
-			System.arraycopy(abiomegenbase1, 0, par1ArrayOfBiomeGenBase, 0, width * length);
+			//System.arraycopy(abiomegenbase1, 0, par1ArrayOfBiomeGenBase, 0, width * length);
 
 			return par1ArrayOfBiomeGenBase;
 
@@ -119,12 +119,12 @@ public class WorldChunkManagerTuto {//extends WorldChunkManager {
 
 				if(aint[i] >= 0){
 
-					par1ArrayOfBiomeGenBase[i] = BiomeCache.getBiome(aint[i]);
+					//par1ArrayOfBiomeGenBase[i] = BiomeCache.getBiome(aint[i]);
 
 				}
 				else{
 
-					par1ArrayOfBiomeGenBase[i] = /*VotreBiome*/;
+			//		par1ArrayOfBiomeGenBase[i] = /*VotreBiome*/;
 
 				}
 
@@ -149,13 +149,13 @@ public class WorldChunkManagerTuto {//extends WorldChunkManager {
 
 		for(int j2 = 0; j2 < l1 * i2; ++j2)	{
 
-			BiomeCache biomegenbase = BiomeCache.getBiome(aint[j2]);
+		//	BiomeCache biomegenbase = BiomeCache.getBiome(aint[j2]);
 
 
-			if(!par4List.contains(biomegenbase)) {
-
-				return false;
-			}
+//			if(!par4List.contains(biomegenbase)) {
+//
+//				return false;
+//			}
 		}
 		return true;
 
@@ -184,16 +184,16 @@ public class WorldChunkManagerTuto {//extends WorldChunkManager {
 			int l2 = l + k2 % l1 << 2;
 			int i3 = i1 + k2 / l1 << 2;
 
-			BiomeCache biomegenbase = BiomeCache.getBiome(aint[k2]);
-
-
-			if(par4List.contains(biomegenbase) && (chunkposition == null || par5Random.nextInt(j2 + 1) == 0)){
-
-				chunkposition = new ChunkPos(l2, i3);
-
-				++j2;
-
-			}
+//			BiomeCache biomegenbase = BiomeCache.getBiome(aint[k2]);
+//
+//
+//			if(par4List.contains(biomegenbase) && (chunkposition == null || par5Random.nextInt(j2 + 1) == 0)){
+//
+//				chunkposition = new ChunkPos(l2, i3);
+//
+//				++j2;
+//
+//			}
 
 		}
 		return chunkposition;

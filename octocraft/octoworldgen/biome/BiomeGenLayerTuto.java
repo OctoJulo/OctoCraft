@@ -34,7 +34,7 @@ public class BiomeGenLayerTuto extends GenLayer {
 		for(int dz = 0; dz < depth; dz++) {
 			for(int dx = 0; dx < width; dx++) {
 				this.initChunkSeed(dx + x, dz + z);
-				dest[(dx + dz * width)] = this.baseBiomes[nextInt(this.baseBiomes.length)].biomeID;
+				//dest[(dx + dz * width)] = this.baseBiomes[nextInt(this.baseBiomes.length)].biomeID;
 			}
 			
         }

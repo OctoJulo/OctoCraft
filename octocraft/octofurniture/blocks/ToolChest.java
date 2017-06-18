@@ -28,7 +28,6 @@ public class ToolChest extends BlockContainer{
 		setCreativeTab(OctoFurniture.CREATIVE_TABFURNITURES);
 	}
 	
-	
 	public static void preInit(){
 
 	}
@@ -46,7 +45,6 @@ public class ToolChest extends BlockContainer{
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (worldIn.isRemote) return true;
 		System.out.println("OCTO: Open ToolChest inventory");
-		//playerIn.worldObj.playSound(null, pos, ClientProxy.cantinasong, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		playerIn.openGui(OctoCraft.instance, GuiHandlerToolChest.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
 		return true;
 	}	

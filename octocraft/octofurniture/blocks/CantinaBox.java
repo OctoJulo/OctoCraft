@@ -17,10 +17,7 @@ public class CantinaBox extends Block {
 		super(Material.IRON);
 		setCreativeTab(OctoFurniture.CREATIVE_TABCHEAT);
 		setHardness(1.0F);
-		// TODO Auto-generated constructor stub
 	}
-	
-
 	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {

@@ -31,7 +31,7 @@ import octogeek.octocraft.octofurniture.blocks.ToolChest;
 import octogeek.octocraft.octofurniture.blocks.VerticalTeleporter;
 import octogeek.octocraft.octofurniture.gui.GuiHandlerToolChest;
 import octogeek.octocraft.octofurniture.tabs.TabCheat;
-import octogeek.octocraft.octofurniture.tabs.TabConstruction;
+import octogeek.octocraft.octofurniture.tabs.TabFConstruction;
 import octogeek.octocraft.octofurniture.tabs.TabFurnitures;
 import octogeek.octocraft.octofurniture.tileentity.TileEntityToolChest;
 import octogeek.octocraft.octofurniture.tileentity.TileEntityVerticalTeleporter;
@@ -59,7 +59,7 @@ public class OctoFurniture {
 	public static SoundEvent teleport;
 	
 	public static final CreativeTabs CREATIVE_TABFURNITURES = new TabFurnitures();
-	public static final CreativeTabs CREATIVE_TABCONSTRUCTION = new TabConstruction();	
+	public static final CreativeTabs CREATIVE_TABCONSTRUCTION = new TabFConstruction();	
 	public static final CreativeTabs CREATIVE_TABCHEAT = new TabCheat();	
 	
 	public static final Map<String,Block> FurnitureBlockRegistry = new HashMap<String,Block>();

@@ -50,12 +50,11 @@ public enum ChestType implements IStringSerializable{
 //	public ChestType(int size2, int rowLength2, boolean tieredChest2, String friendlyName2, String modelTexture2,
 //			int textureRow2, List<String> mats, Class<? extends TileEntityCommonChest> clazz2, Item item,
 //			String[] recipes2) {
-//		// TODO Auto-generated constructor stub
 //	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
+		
 		return name().toLowerCase();
 	}
     public String getModelTexture()

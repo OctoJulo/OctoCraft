@@ -11,7 +11,7 @@ public class TabCheat extends CreativeTabs {
 	public TabCheat() {
 		super("tabcheat");
 		//this.setBackgroundImageName("octocheat.png");
-		this.setBackgroundImageName(OctoReference.MOD_ID+"_logo.png");
+		this.setBackgroundImageName(OctoReference.MOD_ID+"_cheat.png");
 	}
 
 	@Override
